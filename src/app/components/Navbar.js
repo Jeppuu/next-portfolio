@@ -4,10 +4,9 @@ import { dynapuff } from "../layout";
 
 export default function Navbar() {
   return (
-    <nav>
-      <span className="nav-title" style={dynapuff.style} ><Link href="#about">Jenna Blomqvist</Link></span>
-
-      <ul className="nav-links">
+    <nav className="flex flex-row justify-center md:justify-between items-center fixed top-0 left-0 w-full shadow z-10 text-white uppercase min-h-fit py-4">
+      <span className="mx-2 md:mx-4 pl-4  text-lg md:text-xl" style={dynapuff.style} ><Link href="#about">Jenna Blomqvist</Link></span>
+      <ul className=" flex flex-row mr-2 justify-end">
         <li className="nav-link"><Link href="#about">
           About
         </Link></li>

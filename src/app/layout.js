@@ -10,7 +10,7 @@ export const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Jenna Blomqvist',
-  description: 'My personal portfolio page built with create next app',
+  description: 'My personal portfolio page built with NextJS',
 }
 
 export default function RootLayout({ children }) {
