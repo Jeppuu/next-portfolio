@@ -221,7 +221,7 @@ nav {
     transparent 10%,
     rgba(8, 129, 163, 0.4) 100%
   );
-  padding: 1em;
+  padding: 2em;
   padding-bottom: 3em;
   display: flex;
   flex-direction: column;
@@ -244,24 +244,30 @@ nav {
 
 .project-tile {
   background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.5em;
+  justify-content: space-between;
+  /*gap: 0.5em;*/
   padding: 0;
   border: none;
   border-radius: 5px;
   max-width: 23em;
   min-width: 20em;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.4s ease-out, background-color 0.3s ease-out;
+  transition: box-shadow 0.4s ease-out,
+    background-color 0.3s ease-out transform 0.3s ease-in-out;
 }
 .project-tile:hover {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 .project-tile:hover p {
   background-color: rgb(7, 110, 139);
+}
+.project-tile:hover .project-details {
+  opacity: 1;
 }
 
 .project-tile p {
@@ -276,6 +282,40 @@ nav {
   width: 100%;
   height: 20%;
   text-transform: uppercase;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 60vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.project-description {
+  font-size: 0.88em;
+  font-weight: bold;
+}
+.project-technologies {
+  margin-top: 20px;
+  word-spacing: 5px;
 }
 
 .show-btn {
@@ -293,11 +333,12 @@ nav {
     font-size: 1.6em;
     line-height: normal;
   }
-  .project-tile {
-    gap: 0.4em;
-  }
+
   .project-tile p {
     font-size: 0.9em;
+  }
+  .project-details {
+    font-size: 0.8em;
   }
 }
 
